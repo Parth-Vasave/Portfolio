@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 
 const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,6 +15,10 @@ const Navigation: React.FC = () => {
   }, []);
 
   const navItems = ['Home', 'About', 'Skills', 'Projects', 'Contact'];
+
+  const handleNavClick = () => {
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <motion.nav
@@ -33,6 +38,7 @@ const Navigation: React.FC = () => {
             transition={{ delay: index * 0.1 }}
             whileHover={{ scale: 1.1, color: '#64ffda' }}
             whileTap={{ scale: 0.95 }}
+            onClick={handleNavClick}
           >
             {item}
           </motion.a>

@@ -85,8 +85,7 @@ const Contact: React.FC = () => {
 
   const socialLinks = [
     { name: 'GitHub', url: 'https://github.com/Parth-Vasave', icon: '🔗' },
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/parth-vasave', icon: '💼' },
-    { name: 'Resume', url: '/ParthResumeJuly205.pdf', icon: '📄' }
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/parth-vasave', icon: '💼' }
   ];
 
   return (
@@ -208,8 +207,8 @@ const Contact: React.FC = () => {
                   key={link.name}
                   href={link.url}
                   className="social-link"
-                  target={link.name === 'Resume' ? '_blank' : '_self'}
-                  rel={link.name === 'Resume' ? 'noopener noreferrer' : undefined}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   initial={{ opacity: 0, x: -20 }}
                   animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                   transition={{ delay: 0.5 + index * 0.1 }}

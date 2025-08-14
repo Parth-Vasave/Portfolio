@@ -20,7 +20,8 @@ Visit the live website: [Your Portfolio URL]
 ## 🛠️ Built With
 
 ### Frontend
-- **React 19** - JavaScript library for building user interfaces
+- **React 18** - JavaScript library for building user interfaces
+- **Vite** - Next generation frontend tooling
 - **Tailwind CSS** - Utility-first CSS framework
 - **Radix UI** - Low-level UI primitives
 - **Lucide React** - Beautiful & consistent icons
@@ -28,8 +29,9 @@ Visit the live website: [Your Portfolio URL]
 
 ### Tools & Services
 - **Formspree** - Form handling service
-- **Craco** - Create React App Configuration Override
+- **Vite** - Fast build tool and dev server
 - **PostCSS** - CSS post-processor
+- **GitHub Actions** - CI/CD for automatic deployment
 
 ## 📁 Project Structure
 
@@ -78,7 +80,9 @@ portfolio/
 
 3. **Start the development server**
    ```bash
-   npm start
+   yarn dev
+   # or
+   yarn start
    ```
 
 4. **Open your browser**
@@ -88,10 +92,19 @@ portfolio/
 
 ```bash
 cd frontend
-npm run build
+yarn build
 ```
 
-This creates a `build` folder with optimized production files.
+This creates a `dist` folder with optimized production files.
+
+### Deploying to GitHub Pages
+
+```bash
+cd frontend
+yarn deploy
+```
+
+Or push to main branch for automatic deployment via GitHub Actions.
 
 ## 📝 Customization
 
@@ -160,23 +173,25 @@ The portfolio is fully responsive with breakpoints:
 
 In the frontend directory:
 
-- `npm start` - Runs the app in development mode
-- `npm run build` - Builds the app for production
-- `npm test` - Launches the test runner
+- `yarn dev` / `yarn start` - Runs the app in development mode
+- `yarn build` - Builds the app for production
+- `yarn preview` - Preview the production build locally
+- `yarn deploy` - Deploy to GitHub Pages
+- `yarn test` - Launches the test runner
 
 ## 🚀 Deployment
 
-### GitHub Pages
-1. Install gh-pages: `npm install --save-dev gh-pages`
-2. Add to package.json:
-   ```json
-   "homepage": "https://yourusername.github.io/portfolio",
-   "scripts": {
-     "predeploy": "npm run build",
-     "deploy": "gh-pages -d build"
-   }
-   ```
-3. Deploy: `npm run deploy`
+### GitHub Pages (Automatic)
+1. Push your code to GitHub
+2. Enable GitHub Pages in repository settings (source: GitHub Actions)
+3. Every push to main branch automatically deploys the site
+4. Site will be available at: `https://yourusername.github.io/portfolio`
+
+### GitHub Pages (Manual)
+```bash
+cd frontend
+yarn deploy
+```
 
 ### Netlify
 1. Connect your GitHub repository

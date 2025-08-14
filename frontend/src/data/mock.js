@@ -7,7 +7,7 @@ export const mockData = {
     location: "Mumbai, India",
     github: "https://github.com/parth-vasave",
     linkedin: "https://linkedin.com/in/parth-vasave",
-    resumeUrl: "./Images/Parth Resume Aug 2025.pdf"
+    resumeUrl: "Images/Parth Resume Aug 2025.pdf"
   },
 
   about: {
@@ -59,7 +59,7 @@ export const mockData = {
       tech: ["Next.js", "TypeScript", "TailwindCSS", "ShadCN UI"],
       github: "https://github.com/Parth-Vasave/Stegano",
       demo: "https://stegano-dusky.vercel.app",
-      image: "./Images/stegano.png",
+      image: "Images/stegano.png",
       category: "Security & Cryptography"
     },
     {
@@ -68,7 +68,7 @@ export const mockData = {
       description: "A modern inventory management system with real-time tracking, supplier management, and automated reporting dashboard.",
       tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Socket.io"],
       github: "https://github.com/Parth-Vasave/InventoryManagementSystem",
-      image: "./Images/Inventory.png",
+      image: "Images/Inventory.png",
       category: "Web Application"
     },
     {
@@ -78,7 +78,7 @@ export const mockData = {
       tech: ["Next.js", "React.js", "TypeScript", "CanvasAPI"],
       github: "https://github.com/Parth-Vasave/FileForge",
       demo: "https://file-forge-rho.vercel.app",
-      image: "./Images/FileForge.png",
+      image: "Images/FileForge.png",
       category: "Web Application"
     },
     {
@@ -88,7 +88,7 @@ export const mockData = {
       tech: ["React.js", "Next.js", "CSS"],
       github: "https://github.com/Parth-Vasave/NoTrace",
       demo: "https://no-trace-ruddy.vercel.app",
-      image: "./Images/NoTrae.png",
+      image: "Images/NoTrae.png",
       category: "Security & Privacy"
     },
     {
@@ -98,7 +98,7 @@ export const mockData = {
       tech: ["Next.js", "TailwindCSS", "TypeScript"],
       github: "https://github.com/Parth-Vasave/AlgoView",
       demo: "https://algo-view-omega.vercel.app",
-      image: "./Images/AlgoView.png",
+      image: "Images/AlgoView.png",
       category: "Educational Tool"
     },
     {
@@ -107,7 +107,7 @@ export const mockData = {
       description: "A machine learning project that predicts video game sales using regression models and time series analysis.",
       tech: ["Python", "Prophet", "Pandas", "NumPy", "Matplotlib", "Jupyter"],
       github: "https://github.com/Parth-Vasave/VideoGameSalesForecast",
-      image: "./Images/VideoGameSales.png",
+      image: "Images/VideoGameSales.png",
       category: "Machine Learning"
     }
   ],

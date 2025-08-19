@@ -15,7 +15,7 @@ A modern, responsive portfolio website built with React, showcasing my projects,
 
 ## 🚀 Live Demo
 
-Visit the live website: [Your Portfolio URL]
+Visit the live website: 
 
 ## 🛠️ Built With
 
@@ -153,21 +153,6 @@ const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
 });
 ```
 
-## 🎨 Styling
-
-The project uses Tailwind CSS for styling. Key design elements:
-
-- **Color Scheme**: Emerald and teal gradients with dark theme
-- **Typography**: Modern, clean fonts with proper hierarchy
-- **Animations**: Smooth transitions and hover effects
-- **Responsive**: Mobile-first approach with breakpoints
-
-## 📱 Responsive Design
-
-The portfolio is fully responsive with breakpoints:
-- Mobile: < 768px
-- Tablet: 768px - 1024px
-- Desktop: > 1024px
 
 ## 🔧 Available Scripts
 
@@ -209,17 +194,6 @@ yarn deploy
 - **Loading Speed**: Fast initial load with lazy loading
 - **SEO**: Proper meta tags and semantic HTML
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/new-feature`
-3. Commit changes: `git commit -am 'Add new feature'`
-4. Push to branch: `git push origin feature/new-feature`
-5. Submit a pull request
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ## 📞 Contact
 
@@ -228,14 +202,5 @@ This project is open source and available under the [MIT License](LICENSE).
 - LinkedIn: [linkedin.com/in/parth-vasave](https://linkedin.com/in/parth-vasave)
 - GitHub: [github.com/parth-vasave](https://github.com/parth-vasave)
 
-## 🙏 Acknowledgments
-
-- [React](https://reactjs.org/) - The web framework used
-- [Tailwind CSS](https://tailwindcss.com/) - For styling
-- [Radix UI](https://www.radix-ui.com/) - For UI components
-- [Lucide](https://lucide.dev/) - For icons
-- [Formspree](https://formspree.io/) - For form handling
-
----
 
 ⭐ Star this repository if you found it helpful!

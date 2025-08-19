@@ -132,7 +132,7 @@ export const mockData = {
       company: "As Part of Diploma Program",
       location: "Mumbai, India",
       duration: "Oct 2021 - Feb 2022",
-      description: "Developed and maintained web applications using React and Node.js. Collaborated with senior developers on feature implementation and bug fixes.",
+      description: "Developed and maintained an Android Project using Kotlin. Collaborated with senior developers on feature implementation and bug fixes.",
       achievements: [
         "Improved application performance by 30% through code optimization",
         "Implemented various design changes",
@@ -141,10 +141,4 @@ export const mockData = {
     }
   ],
 
-  achievements: [
-    "Dean's List - Fall 2023, Spring 2024",
-    "ACM Programming Contest - Regional Finalist 2024",
-    "Google Code Jam - Round 2 Qualifier 2024",
-    "Hackathon Winner - Cal Hacks 10.0 (Best Social Impact Award)"
-  ]
 };

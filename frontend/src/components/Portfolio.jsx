@@ -284,9 +284,13 @@ const Portfolio = () => {
                 className="group bg-white/5 backdrop-blur-xl border border-white/10 hover:border-emerald-500/30 shadow-2xl hover:shadow-emerald-500/20 transition-all duration-500 rounded-3xl overflow-hidden hover:scale-[1.02]"
               >
                 <div className="relative aspect-video overflow-hidden">
-                  <img 
-                    src={project.image} 
+                  <img
+                    src={project.image}
                     alt={project.title}
+                    onError={(e) => {
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = 'https://placehold.co/800x450/png?text=Image+Not+Found';
+                    }}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>

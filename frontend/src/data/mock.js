@@ -59,7 +59,7 @@ export const mockData = {
       tech: ["Next.js", "TypeScript", "TailwindCSS", "ShadCN UI"],
       github: "https://github.com/Parth-Vasave/Stegano",
       demo: "https://stegano-dusky.vercel.app",
-      image: "Images/stegano.png",
+      image: "Images/SteganoScreenShot.png",
       category: "Security & Cryptography"
     },
     {
@@ -88,7 +88,7 @@ export const mockData = {
       tech: ["React.js", "Next.js", "CSS"],
       github: "https://github.com/Parth-Vasave/NoTrace",
       demo: "https://no-trace-ruddy.vercel.app",
-      image: "Images/NoTrae.png",
+      image: "Images/NoTrace.png",
       category: "Security & Privacy"
     },
     {
@@ -98,7 +98,7 @@ export const mockData = {
       tech: ["Next.js", "TailwindCSS", "TypeScript"],
       github: "https://github.com/Parth-Vasave/AlgoView",
       demo: "https://algo-view-omega.vercel.app",
-      image: "Images/AlgoView.png",
+      image: "Images/algoview.png",
       category: "Educational Tool"
     },
     {

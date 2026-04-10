@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --animate-marquee: marquee 40s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-50% - 10px));
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "SF Mono", SFMono-Regular, ui-monospace, Menlo, Monaco, Consolas, monospace;
+  font-size: 16px;
+}
+
+code, .font-mono {
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+
+:root {
+  --bg: #fafafa;
+  --text-primary: #09090b;
+  --text-secondary: #52525b;
+  --text-muted: #a1a1aa;
+  --border: #e4e4e7;
+  --accent: #eab308;
+}
+
+.dark {
+  --bg: #09090b;
+  --text-primary: #fafafa;
+  --text-secondary: #a1a1aa;
+  --text-muted: #52525b;
+  --border: #27272a;
+  --accent: #eab308;
+}
+
+::selection {
+  background-color: var(--accent);
+  color: #09090b;
+}
+
+

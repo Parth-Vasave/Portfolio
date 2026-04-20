@@ -249,7 +249,22 @@ export default function Home() {
             <div className="space-y-3">
               <div className="flex items-baseline justify-between gap-4">
                 <Link href="#">
+                  University of Helsinki — Cyber Security Base 2025
+                </Link>
+              </div>
+              <div className="flex items-baseline justify-between gap-4">
+                <Link href="#">
                   University of Helsinki — Python MOOC 25
+                </Link>
+              </div>
+              <div className="flex items-baseline justify-between gap-4">
+                <Link href="#">
+                  Harvard University — CS50
+                </Link>
+              </div>
+              <div className="flex items-baseline justify-between gap-4">
+                <Link href="#">
+                  Harvard University — CS50P
                 </Link>
               </div>
               <div className="flex items-baseline justify-between gap-4">

@@ -82,7 +82,7 @@ export default function Home() {
                 </svg>
               </a>
               <a
-                href="https://linkedin.com/in/parthvasave"
+                href="https://www.linkedin.com/in/parth-vasave"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"

@@ -104,7 +104,7 @@ export default function Home() {
               </a>
               <div className="w-px h-5 bg-[var(--border)]" />
               <a
-                href="/resume.pdf"
+                href="/ParthResumeAug2026.pdf"
                 target="_blank"
                 className="text-sm text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
               >
@@ -244,6 +244,11 @@ export default function Home() {
             </div>
           </Section>
 
+          {/* <── Skills ──> */}
+          <Section title="Skills">
+            <SkillsGrid />
+          </Section>
+
           {/* <── Certifications ──> */}
           <Section title="Certifications">
             <div className="space-y-3">
@@ -278,11 +283,6 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-          </Section>
-
-          {/* <── Skills ──> */}
-          <Section title="Skills">
-            <SkillsGrid />
           </Section>
         </div>
       </main>

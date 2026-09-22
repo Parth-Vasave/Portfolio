@@ -1,7 +1,26 @@
 import { ThemeToggle } from "@/components/theme-toggle";
 import { ProjectGrid } from "@/components/project-grid";
-import { HoverEntry } from "@/components/hover-entry";
+import { Entry } from "@/components/entry";
+import { OpenSourceGrid } from "@/components/open-source-grid";
 import { SkillsGrid } from "@/components/skills-grid";
+
+const certifications = [
+  { name: "AWS Cloud Support Associate", issuer: "Amazon Web Services" },
+  { name: "IBM AI Developer", issuer: "IBM" },
+  { name: "Meta Full Stack Developer", issuer: "Meta" },
+  {
+    name: "Software Engineering Specialization",
+    issuer: "The Hong Kong University of Science and Technology",
+  },
+  {
+    name: "Cybersecurity: Essentials of AI",
+    issuer: "Macquarie University",
+  },
+  { name: "Cyber Security Base 2025", issuer: "University of Helsinki" },
+  { name: "Python MOOC 25", issuer: "University of Helsinki" },
+  { name: "CS50", issuer: "Harvard University" },
+  { name: "CS50P", issuer: "Harvard University" },
+];
 
 function Section({
   title,
@@ -14,9 +33,9 @@ function Section({
 }) {
   return (
     <section className="mt-16">
-      <div className={fullWidth ? "max-w-[720px] mx-auto px-6" : ""}>
-        <h2 className="text-sm font-medium uppercase tracking-[0.18em] mb-5">
-          <span className="bg-[#EAB308] text-black px-1 py-0.5 rounded-sm">
+      <div className={fullWidth ? "max-w-[800px] mx-auto px-6" : ""}>
+        <h2 className="text-base font-medium uppercase tracking-[0.08em] sm:tracking-[0.18em] leading-relaxed mb-5">
+          <span className="bg-[#EAB308] text-black px-1 py-0.5 rounded-sm box-decoration-clone">
             {title}
           </span>
         </h2>
@@ -26,42 +45,15 @@ function Section({
   );
 }
 
-function Badge({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="ml-1.5 inline-flex items-center rounded-full bg-yellow-500/15 px-2.5 py-0.5 text-xs font-medium text-yellow-600 dark:text-yellow-400 leading-none">
-      {children}
-    </span>
-  );
-}
-
-function Link({
-  href,
-  children,
-}: {
-  href: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-base font-medium text-[var(--text-primary)] underline decoration-[var(--border)] decoration-1 underline-offset-[3px] hover:decoration-[var(--text-muted)] transition-colors"
-    >
-      {children}
-    </a>
-  );
-}
-
 export default function Home() {
   return (
     <div className="flex flex-col items-center min-h-screen">
       <main className="w-full py-16 md:py-24">
-        <div className="max-w-[720px] mx-auto px-6">
+        <div className="max-w-[800px] mx-auto px-6">
           {/* <── Header ──> */}
           <header>
-            <div className="flex items-start justify-between">
-              <h1 className="text-3xl font-bold text-[var(--text-primary)]">
+            <div className="flex items-start justify-between gap-4">
+              <h1 className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)]">
                 Parth Vasave
               </h1>
               <ThemeToggle />
@@ -69,12 +61,12 @@ export default function Home() {
             <p className="text-base text-[var(--text-secondary)] mt-1">
               Software Developer · Mumbai, India
             </p>
-            <div className="flex items-center gap-4 mt-4">
+            <div className="flex flex-wrap items-center gap-4 mt-4">
               <a
                 href="https://github.com/Parth-Vasave"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
+                className="p-2 -m-2 text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
                 aria-label="GitHub"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -85,7 +77,7 @@ export default function Home() {
                 href="https://www.linkedin.com/in/parth-vasave"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
+                className="p-2 -m-2 text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
                 aria-label="LinkedIn"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -94,7 +86,7 @@ export default function Home() {
               </a>
               <a
                 href="mailto:mailparthvasave@gmail.com"
-                className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
+                className="p-2 -m-2 text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
                 aria-label="Email"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -104,9 +96,9 @@ export default function Home() {
               </a>
               <div className="w-px h-5 bg-[var(--border)]" />
               <a
-                href="/ParthResumeAug2026.pdf"
+                href="/resume.pdf"
                 target="_blank"
-                className="text-sm text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
+                className="py-2 -my-2 text-base text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
               >
                 Resume ↗
               </a>
@@ -116,20 +108,19 @@ export default function Home() {
           {/* <── Experience ──> */}
           <Section title="Experience">
             <div className="space-y-4">
-              <HoverEntry
-                title="CSI VCET"
-                href="#"
-                subtitle="Technical Head"
-                date="Aug 2025 — Present"
-                details="Leading the technical department of the Computer Society of India (CSI) student chapter. Orchestrating technical workshops, hackathons, and seminars for 200+ students while fostering a culture of peer-to-peer learning."
-              />
-              <HoverEntry
+              <Entry
                 title="Freelance Developer"
                 subtitle="Full-Stack Development · Remote"
                 date="2025 — Present"
                 details="Architecting and deploying full-stack solutions for diverse clients using React, Python, and MongoDB. Successfully shipped 5+ projects with a focus on performance optimization, responsive design, and clean architecture."
               />
-              <HoverEntry
+              <Entry
+                title="Computer Society of India - VCET"
+                subtitle="Technical Head"
+                date="Aug 2025 — Aug 2026"
+                details="Leading the technical department of the Computer Society of India (CSI) student chapter. Orchestrating technical workshops, hackathons, and seminars for 200+ students while fostering a culture of peer-to-peer learning."
+              />
+              <Entry
                 title="Stride Ahead"
                 subtitle="Full-Stack Developer Intern"
                 date="June 2025"
@@ -146,13 +137,13 @@ export default function Home() {
           {/* <── Education ──> */}
           <Section title="Education">
             <div className="space-y-4">
-              <HoverEntry
+              <Entry
                 title="University of Mumbai"
                 subtitle="B.E. Computer Science & Engineering (Data Science)"
                 date="2023 — 2026"
                 details="Specializing in Data Science with a core focus on Machine Learning, Big Data Analytics, and Statistical Modeling. Gained hands-on experience in building predictive models and scaling data-driven applications. Serving as Technical Head for CSI VCET, coordinating workshops and technical events for 200+ students."
               />
-              <HoverEntry
+              <Entry
                 title="MSBTE, Mumbai"
                 subtitle="Diploma in Computer Engineering"
                 date="2019 — 2022"
@@ -163,85 +154,7 @@ export default function Home() {
 
           {/* <── Open Source Contributions ──> */}
           <Section title="Open Source Contributions">
-            <div className="space-y-1">
-              {/* collective/icalendar */}
-              <div className="group rounded-lg px-3 py-2.5 -mx-3 hover:bg-[var(--border)]/30 transition-colors flex items-center gap-2 flex-wrap">
-                <a
-                  href="https://github.com/collective/icalendar"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-base font-medium text-[var(--text-primary)] underline decoration-[var(--border)] decoration-1 underline-offset-[3px] hover:decoration-[var(--text-muted)] transition-colors"
-                >
-                  collective/icalendar
-                </a>
-                <span className="text-yellow-500 text-sm">★ 1,130</span>
-              </div>
-
-              {/* wemake-services/django-modern-rest */}
-              <div className="group rounded-lg px-3 py-2.5 -mx-3 hover:bg-[var(--border)]/30 transition-colors flex items-center gap-2 flex-wrap">
-                <a
-                  href="https://github.com/wemake-services/django-modern-rest"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-base font-medium text-[var(--text-primary)] underline decoration-[var(--border)] decoration-1 underline-offset-[3px] hover:decoration-[var(--text-muted)] transition-colors"
-                >
-                  wemake-services/django-modern-rest
-                </a>
-                <span className="text-yellow-500 text-sm">★ 1,027</span>
-              </div>
-
-              {/* Agent-Field/SWE-AF */}
-              <div className="group rounded-lg px-3 py-2.5 -mx-3 hover:bg-[var(--border)]/30 transition-colors flex items-center gap-2 flex-wrap">
-                <a
-                  href="https://github.com/Agent-Field/SWE-AF"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-base font-medium text-[var(--text-primary)] underline decoration-[var(--border)] decoration-1 underline-offset-[3px] hover:decoration-[var(--text-muted)] transition-colors"
-                >
-                  Agent-Field/SWE-AF
-                </a>
-                <span className="text-yellow-500 text-sm">★ 678</span>
-              </div>
-
-              {/* transmute-app/transmute */}
-              <div className="group rounded-lg px-3 py-2.5 -mx-3 hover:bg-[var(--border)]/30 transition-colors flex items-center gap-2 flex-wrap">
-                <a
-                  href="https://github.com/transmute-app/transmute"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-base font-medium text-[var(--text-primary)] underline decoration-[var(--border)] decoration-1 underline-offset-[3px] hover:decoration-[var(--text-muted)] transition-colors"
-                >
-                  transmute-app/transmute
-                </a>
-                <span className="text-yellow-500 text-sm">★ 374</span>
-              </div>
-
-              {/* leanEthereum/leanSpec */}
-              <div className="group rounded-lg px-3 py-2.5 -mx-3 hover:bg-[var(--border)]/30 transition-colors flex items-center gap-2 flex-wrap">
-                <a
-                  href="https://github.com/leanEthereum/leanSpec"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-base font-medium text-[var(--text-primary)] underline decoration-[var(--border)] decoration-1 underline-offset-[3px] hover:decoration-[var(--text-muted)] transition-colors"
-                >
-                  leanEthereum/leanSpec
-                </a>
-                <span className="text-yellow-500 text-sm">★ 124</span>
-              </div>
-
-              {/* sodascience/metasyn */}
-              <div className="group rounded-lg px-3 py-2.5 -mx-3 hover:bg-[var(--border)]/30 transition-colors flex items-center gap-2 flex-wrap">
-                <a
-                  href="https://github.com/sodascience/metasyn"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-base font-medium text-[var(--text-primary)] underline decoration-[var(--border)] decoration-1 underline-offset-[3px] hover:decoration-[var(--text-muted)] transition-colors"
-                >
-                  sodascience/metasyn
-                </a>
-                <span className="text-yellow-500 text-sm">★ 51</span>
-              </div>
-            </div>
+            <OpenSourceGrid />
           </Section>
 
           {/* <── Skills ──> */}
@@ -251,38 +164,18 @@ export default function Home() {
 
           {/* <── Certifications ──> */}
           <Section title="Certifications">
-            <div className="space-y-3">
-              <div className="flex items-baseline justify-between gap-4">
-                <Link href="#">
-                  University of Helsinki — Cyber Security Base 2025
-                </Link>
-              </div>
-              <div className="flex items-baseline justify-between gap-4">
-                <Link href="#">
-                  University of Helsinki — Python MOOC 25
-                </Link>
-              </div>
-              <div className="flex items-baseline justify-between gap-4">
-                <Link href="#">
-                  Harvard University — CS50
-                </Link>
-              </div>
-              <div className="flex items-baseline justify-between gap-4">
-                <Link href="#">
-                  Harvard University — CS50P
-                </Link>
-              </div>
-              <div className="flex items-baseline justify-between gap-4">
-                <Link href="#">
-                  HackerRank — SQL Basic
-                </Link>
-              </div>
-              <div className="flex items-baseline justify-between gap-4">
-                <Link href="#">
-                  HackerRank — SQL Intermediate
-                </Link>
-              </div>
-            </div>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+              {certifications.map(({ name, issuer }) => (
+                <li key={name}>
+                  <p className="text-base font-medium text-[var(--text-primary)]">
+                    {name}
+                  </p>
+                  <p className="text-base text-[var(--text-muted)] mt-0.5">
+                    {issuer}
+                  </p>
+                </li>
+              ))}
+            </ul>
           </Section>
         </div>
       </main>

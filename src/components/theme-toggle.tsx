@@ -1,23 +1,26 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
+
+const subscribe = () => () => {};
 
 export function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme, setTheme } = useTheme();
+  // false during SSR, true on the client — avoids a hydration mismatch
+  const mounted = useSyncExternalStore(subscribe, () => true, () => false);
 
-  useEffect(() => setMounted(true), []);
+  if (!mounted) return <div className="w-5 h-5" />;
 
-  if (!mounted) return <div className="w-4 h-4" />;
+  const isDark = resolvedTheme === "dark";
 
   return (
     <button
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
-      aria-label="Toggle theme"
+      onClick={() => setTheme(isDark ? "light" : "dark")}
+      className="p-2 -m-2 text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
+      aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
     >
-      {theme === "dark" ? (
+      {isDark ? (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="12" cy="12" r="5" />
           <line x1="12" y1="1" x2="12" y2="3" />

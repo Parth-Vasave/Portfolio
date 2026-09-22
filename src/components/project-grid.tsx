@@ -1,7 +1,4 @@
-"use client";
-
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 type Project = {
   name: string;
@@ -23,61 +20,45 @@ const projects: Project[] = [
   {
     name: "NoTrace",
     description: "Minimalist anonymous chat platform with a privacy-first foundation",
-    tech: ["Next.js", "TypeScript", "Tailwind"],
+    tech: ["Next.js", "TypeScript", "Firebase", "Tailwind", "shadcn/ui"],
     image: "/images/notrace-v2.png",
     href: "https://github.com/Parth-Vasave/NoTrace",
   },
   {
     name: "BrewUpdate",
     description: "GUI Homebrew manager with permission & security insights",
-    tech: ["Python", "Brew CLI", "macOS"],
+    tech: ["Python", "pywebview", "JavaScript", "Homebrew", "macOS"],
     image: "/images/brewupdate.png",
     href: "https://github.com/Parth-Vasave/BrewUpdate",
   },
   {
     name: "SupplyFlow",
     description: "Inventory management with supply chain algorithms & real-time alerts",
-    tech: ["Python", "React", "MongoDB"],
+    tech: ["React", "Material UI", "Node.js", "Express", "MongoDB", "Socket.IO", "Python", "scikit-learn"],
     image: "/images/Inventory.png",
     href: "https://github.com/Parth-Vasave/InventoryManagementSystem",
   },
   {
     name: "AlgoView",
     description: "Interactive algorithm visualizer",
-    tech: ["React"],
+    tech: ["Next.js", "TypeScript", "Tailwind", "shadcn/ui", "Genkit"],
     image: "/images/algoview.png",
     href: "https://github.com/Parth-Vasave/AlgoView",
   },
   {
     name: "STEGANO",
     description: "LSB steganography tool for secure message encoding",
-    tech: ["Python", "Tailwind", "ShadCN"],
+    tech: ["Next.js", "TypeScript", "Python", "FastAPI", "Pillow", "Tailwind"],
     image: "/images/SteganoScreenShot.png",
     href: "https://github.com/Parth-Vasave/Stegano",
   },
 ];
 
-const container = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { staggerChildren: 0.06 } },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 12 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.2 } },
-};
-
 export function ProjectGrid() {
   return (
-    <motion.div
-      variants={container}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true }}
-      className="grid grid-cols-1 sm:grid-cols-2 gap-4"
-    >
-      {projects.map((project) => {
-        const Wrapper = project.href ? motion.a : motion.div;
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-10">
+      {projects.map((project, i) => {
+        const Wrapper = project.href ? "a" : "div";
         const wrapperProps = project.href
           ? {
               href: project.href,
@@ -88,61 +69,55 @@ export function ProjectGrid() {
         return (
           <Wrapper
             key={project.name}
-            variants={item}
             {...wrapperProps}
-            className="group flex flex-col rounded-xl border border-[var(--border)] overflow-hidden hover:border-[var(--text-muted)] transition-colors"
+            style={{ "--i": i } as React.CSSProperties}
+            className="fade-up group flex flex-col"
           >
-            <div className="relative w-full aspect-video overflow-hidden bg-[var(--border)]/20">
+            {/* hairline ring gives light screenshots an edge against the page */}
+            <div className="relative w-full aspect-video overflow-hidden rounded-xl ring-1 ring-[var(--border)] bg-[var(--border)]/20">
               <Image
                 src={project.image}
-                alt={project.name}
+                alt={`${project.name} screenshot`}
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                sizes="(min-width: 848px) 390px, (min-width: 768px) 50vw, 100vw"
+                className="object-cover transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:group-hover:scale-100"
               />
             </div>
-            <div className="flex flex-col gap-2 p-3.5 flex-1">
-              <div className="flex items-start justify-between gap-1">
-                <h3 className="text-sm font-semibold text-[var(--text-primary)] leading-snug">
+            <div className="flex flex-col gap-1.5 pt-4 flex-1">
+              <div className="flex flex-wrap items-baseline gap-x-2.5 gap-y-0.5">
+                <h3
+                  className={`text-base font-semibold text-[var(--text-primary)] leading-snug ${
+                    project.href
+                      ? "underline decoration-transparent underline-offset-[3px] group-hover:decoration-[var(--text-muted)] transition-colors"
+                      : ""
+                  }`}
+                >
                   {project.name}
+                  {project.href && (
+                    <span
+                      aria-hidden="true"
+                      className="ml-1 inline-block text-[var(--text-muted)] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    >
+                      ↗
+                    </span>
+                  )}
                 </h3>
-                {project.confidential ? (
-                  <span className="flex-shrink-0 text-[9px] font-bold uppercase tracking-wider text-yellow-600 dark:text-yellow-400 px-1.5 py-0.5 rounded bg-yellow-500/15 leading-none mt-0.5">
+                {project.confidential && (
+                  <span className="text-base text-yellow-700 dark:text-yellow-400">
                     Confidential
                   </span>
-                ) : (
-                  <svg
-                    width="10"
-                    height="10"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="flex-shrink-0 mt-0.5 text-[var(--text-muted)] opacity-0 group-hover:opacity-100 transition-opacity group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  >
-                    <line x1="7" y1="17" x2="17" y2="7" />
-                    <polyline points="7 7 17 7 17 17" />
-                  </svg>
                 )}
               </div>
-              <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
+              <p className="text-base text-[var(--text-secondary)] leading-relaxed">
                 {project.description}
               </p>
-              <div className="mt-auto flex flex-wrap gap-1">
-                {project.tech.map((t) => (
-                  <span
-                    key={t}
-                    className="text-[9px] font-bold uppercase tracking-wider text-[var(--text-muted)] px-1.5 py-0.5 rounded bg-[var(--border)]/40"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
+              <p className="mt-auto pt-1 text-base text-[var(--text-muted)]">
+                {project.tech.join(" · ")}
+              </p>
             </div>
           </Wrapper>
         );
       })}
-    </motion.div>
+    </div>
   );
 }

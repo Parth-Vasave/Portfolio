@@ -1,6 +1,5 @@
-"use client";
-
-const skills = [
+// darkInvert: logo is black/dark blue and would disappear on the dark background
+const skills: { name: string; logo: string; darkInvert?: boolean }[] = [
   {
     name: "Python",
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
@@ -20,6 +19,7 @@ const skills = [
   {
     name: "Next.js",
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+    darkInvert: true,
   },
   {
     name: "FastAPI",
@@ -32,6 +32,7 @@ const skills = [
   {
     name: "MySQL",
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+    darkInvert: true,
   },
   {
     name: "Firebase",
@@ -52,10 +53,12 @@ const skills = [
   {
     name: "AWS",
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
+    darkInvert: true,
   },
   {
     name: "Vercel",
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg",
+    darkInvert: true,
   },
   {
     name: "Tailwind",
@@ -81,9 +84,11 @@ export function SkillsGrid() {
             alt={skill.name}
             width={18}
             height={18}
-            className="opacity-70 group-hover:opacity-100 transition-opacity duration-300 dark:invert-[0.15]"
+            className={
+              skill.darkInvert ? "dark:invert dark:hue-rotate-180" : undefined
+            }
           />
-          <span className="text-sm text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] transition-colors duration-300">
+          <span className="text-base text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] transition-colors duration-300">
             {skill.name}
           </span>
         </div>

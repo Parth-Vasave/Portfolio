@@ -5,6 +5,8 @@ const repos = [
   "transmute-app/transmute",
   "leanEthereum/leanSpec",
   "sodascience/metasyn",
+  "cubrid-lab/pycubrid",
+  "DuarteSantos8/openGym",
 ];
 
 // Refetched at most once an hour. Set GITHUB_TOKEN to raise the API rate limit.

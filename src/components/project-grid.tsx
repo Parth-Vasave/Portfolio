@@ -18,6 +18,27 @@ const projects: Project[] = [
     confidential: true,
   },
   {
+    name: "Pulse",
+    description: "API monitoring with distributed checks, incident detection & alerting",
+    tech: ["FastAPI", "Celery", "Redis", "PostgreSQL", "Next.js", "Docker"],
+    image: "/images/pulse.png",
+    href: "https://github.com/Parth-Vasave/pulse",
+  },
+  {
+    name: "AI SQL Analyst Agent",
+    description: "Text-to-SQL agent where every generated query passes AST safety validation",
+    tech: ["Python", "FastAPI", "sqlglot", "PostgreSQL", "LLM", "React"],
+    image: "/images/sql-analyst.png",
+    href: "https://github.com/Parth-Vasave/ai-sql-analyst-agent",
+  },
+  {
+    name: "Kafka Dedup Framework",
+    description: "Exactly-once processing for Kafka consumers via atomic Redis claims",
+    tech: ["Python", "Kafka", "Redis", "PostgreSQL", "Kubernetes", "Prometheus"],
+    image: "/images/kafka-dedup.png",
+    href: "https://github.com/Parth-Vasave/Message-Deduplication-Idempotency-Framework",
+  },
+  {
     name: "NoTrace",
     description: "Minimalist anonymous chat platform with a privacy-first foundation",
     tech: ["Next.js", "TypeScript", "Firebase", "Tailwind", "shadcn/ui"],
@@ -30,27 +51,6 @@ const projects: Project[] = [
     tech: ["Python", "pywebview", "JavaScript", "Homebrew", "macOS"],
     image: "/images/brewupdate.png",
     href: "https://github.com/Parth-Vasave/BrewUpdate",
-  },
-  {
-    name: "SupplyFlow",
-    description: "Inventory management with supply chain algorithms & real-time alerts",
-    tech: ["React", "Material UI", "Node.js", "Express", "MongoDB", "Socket.IO", "Python", "scikit-learn"],
-    image: "/images/Inventory.png",
-    href: "https://github.com/Parth-Vasave/InventoryManagementSystem",
-  },
-  {
-    name: "AlgoView",
-    description: "Interactive algorithm visualizer",
-    tech: ["Next.js", "TypeScript", "Tailwind", "shadcn/ui", "Genkit"],
-    image: "/images/algoview.png",
-    href: "https://github.com/Parth-Vasave/AlgoView",
-  },
-  {
-    name: "STEGANO",
-    description: "LSB steganography tool for secure message encoding",
-    tech: ["Next.js", "TypeScript", "Python", "FastAPI", "Pillow", "Tailwind"],
-    image: "/images/SteganoScreenShot.png",
-    href: "https://github.com/Parth-Vasave/Stegano",
   },
 ];
 

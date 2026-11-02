@@ -7,6 +7,8 @@ const repos = [
   "sodascience/metasyn",
   "cubrid-lab/pycubrid",
   "DuarteSantos8/openGym",
+  "microsoft/apm",
+  "bird-bench/bird-bench.github.io",
 ];
 
 // Refetched at most once an hour. Set GITHUB_TOKEN to raise the API rate limit.

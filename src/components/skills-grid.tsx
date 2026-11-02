@@ -2,71 +2,71 @@
 const skills: { name: string; logo: string; darkInvert?: boolean }[] = [
   {
     name: "Python",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    logo: "https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/python/python-original.svg",
   },
   {
     name: "JavaScript",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+    logo: "https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/javascript/javascript-original.svg",
   },
   {
     name: "TypeScript",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+    logo: "https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/typescript/typescript-original.svg",
   },
   {
     name: "React",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    logo: "https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/react/react-original.svg",
   },
   {
     name: "Next.js",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+    logo: "https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/nextjs/nextjs-original.svg",
     darkInvert: true,
   },
   {
     name: "FastAPI",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
+    logo: "https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/fastapi/fastapi-original.svg",
   },
   {
     name: "MongoDB",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+    logo: "https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/mongodb/mongodb-original.svg",
   },
   {
     name: "MySQL",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+    logo: "https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/mysql/mysql-original.svg",
     darkInvert: true,
   },
   {
     name: "Firebase",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
+    logo: "https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/firebase/firebase-plain.svg",
   },
   {
     name: "Supabase",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg",
+    logo: "https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/supabase/supabase-original.svg",
   },
   {
     name: "Git",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+    logo: "https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/git/git-original.svg",
   },
   {
     name: "Docker",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+    logo: "https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/docker/docker-original.svg",
   },
   {
     name: "AWS",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
+    logo: "https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
     darkInvert: true,
   },
   {
     name: "Vercel",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg",
+    logo: "https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/vercel/vercel-original.svg",
     darkInvert: true,
   },
   {
     name: "Tailwind",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+    logo: "https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/tailwindcss/tailwindcss-original.svg",
   },
   {
     name: "SQL",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuresqldatabase/azuresqldatabase-original.svg",
+    logo: "https://cdn.jsdelivr.net/npm/devicon@2.17.0/icons/azuresqldatabase/azuresqldatabase-original.svg",
   },
 ];
 
